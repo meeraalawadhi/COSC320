@@ -1,4 +1,3 @@
-
 fn array_and_vec() -> ([i32; 4], Vec<i32>) {
     let a = [10, 20, 30, 40]; // Array
 
@@ -9,7 +8,7 @@ fn array_and_vec() -> ([i32; 4], Vec<i32>) {
 }
 
 fn main() {
-   
+    // You can optionally experiment here.
 }
 
 #[cfg(test)]
@@ -19,6 +18,10 @@ mod tests {
     #[test]
     fn test_array_and_vec_similarity() {
         let (a, v) = array_and_vec();
-        assert_eq!(a, *v);
+
+        // Convert `Vec<i32>` to an array reference before comparison
+        assert_eq!(a, v.as_slice());
     }
 }
+
+
